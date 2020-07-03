@@ -8,7 +8,7 @@ const app = express();
 //where as REST API uses different endpoints CRUD - CREATE, READ, UPDATE, DELETE
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: true
+    graphiql: true //gives you graphiql tool to write query, if not neede :false
 }));
 
 const PORT = process.env.PORT || 5000;
