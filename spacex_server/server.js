@@ -1,10 +1,13 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
+const schema = require('./schema.js');
 
 const app = express();
 
+//Graphql uses a single endpoint with a defined schema that specifies how to not only fetch data but also mutate, or change, data.
+//where as REST API uses different endpoints CRUD - CREATE, READ, UPDATE, DELETE
 app.use('/graphql', graphqlHTTP({
-    schema: MyGraphQLSchema,
+    schema,
     graphiql: true
 }));
 
