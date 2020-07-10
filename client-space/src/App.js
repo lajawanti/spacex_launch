@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import logo from './logo.png';
+
 
 function App() {
   return (
     <div className="App">
-        <h1>Space client.....</h1>
+        <img  src = {logo} alt = "spaceX" style = {{width : 300, display:'block', margin: 'auto'}}/>  
     </div>
   );
 }
