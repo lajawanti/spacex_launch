@@ -1,8 +1,12 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema.js');
+const cors = require('cors');
 
 const app = express();
+
+//ALLOW cross origins
+app.use(cors());
 
 //Graphql uses a single endpoint with a defined schema that specifies how to not only fetch data but also mutate, or change, data.
 //where as REST API uses different endpoints CRUD - CREATE, READ, UPDATE, DELETE
