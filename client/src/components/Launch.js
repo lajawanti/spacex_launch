@@ -35,9 +35,33 @@ class Launch extends Component {
                             if(error) console.log("Error ::-- ",error)
 
                             //console.log(data);
-                            const { mission_name } = data.launch
+                            const { mission_name,
+                                    flight_number,
+                                    launch_year,
+                                    launch_success,
+                                    rocket: { rocket_id, rocket_name, rocket_year } 
+                                } = data.launch;
                             return <div>
                                 <h1 className= "display-5 my-3"><span className = "text-light">Mission : </span>{mission_name}</h1>
+                                <h4 className= 'mb-3'>Launch Details</h4>
+                                <ul className = 'list-group'>
+                                    <li className = 'list-group-item'>
+                                        Flight Number: {flight_number}
+                                    </li>
+                                    <li className = 'list-group-item'>
+                                        Launch year: {launch_year}
+                                    </li>
+                                    <li className = 'list-group-item'>
+                                        Launch successful: <span
+                                                                className = {classNames({
+                                                                    'text-success': launch_success,
+                                                                    'text-danger': !launch_success
+                                                                })}
+                                                           >
+                                                               {launch_success ? 'Yes' : 'No'}
+                                                           </span>
+                                    </li>
+                                </ul>
                             </div>
                         } 
                     }
