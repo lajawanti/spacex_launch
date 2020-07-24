@@ -16,6 +16,7 @@ const LAUNCH_QUERY = gql`
                 rocket_id
                 rocket_name
                 rocket_year
+                rocket_type
             }
         }
     }
@@ -39,20 +40,20 @@ class Launch extends Component {
                                     flight_number,
                                     launch_year,
                                     launch_success,
-                                    rocket: { rocket_id, rocket_name, rocket_year } 
+                                    rocket: { rocket_id, rocket_name, rocket_year,rocket_type } 
                                 } = data.launch;
                             return <div>
                                 <h1 className= "display-5 my-3"><span className = "text-light">Mission : </span>{mission_name}</h1>
                                 <h4 className= 'mb-3'>Launch Details</h4>
                                 <ul className = 'list-group'>
                                     <li className = 'list-group-item'>
-                                        Flight Number: {flight_number}
+                                        Flight Number &nbsp; : &nbsp; {flight_number}
                                     </li>
                                     <li className = 'list-group-item'>
-                                        Launch year: {launch_year}
+                                        Launch year &nbsp; : &nbsp; {launch_year}
                                     </li>
                                     <li className = 'list-group-item'>
-                                        Launch successful: <span
+                                        Launch successful &nbsp; : &nbsp; <span
                                                                 className = {classNames({
                                                                     'text-success': launch_success,
                                                                     'text-danger': !launch_success
@@ -65,9 +66,9 @@ class Launch extends Component {
 
                                 <h4 className= 'my-3'>Rocket Details</h4>
                                 <ul className = 'list-group'>
-                                                            <li className = 'list-group-item'>Rocket ID: {rocket_id}</li>
-                                    <li className = 'list-group-item'>Rocket Name: {rocket_name}</li>
-                                    <li className = 'list-group-item'>Rocket Year: {rocket_year}</li>
+                                    <li className = 'list-group-item'>Rocket ID &nbsp; : &nbsp; {rocket_id}</li>
+                                    <li className = 'list-group-item'>Rocket Name &nbsp; : &nbsp; {rocket_name}</li>
+                                    <li className = 'list-group-item'>Rocket Type &nbsp; : &nbsp; {rocket_type}</li>
                                 </ul>
                             </div>
                         } 
