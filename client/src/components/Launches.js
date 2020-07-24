@@ -17,7 +17,7 @@ class Launches extends Component {
     render() {
         return (
             <Fragment>
-                <h3 className = "display-4 my-3">Launches</h3>
+                <h3 className = "display-5 my-3">Launches</h3>
                 <Query query = {LAUNCHES_QUERY}>
                     {
                         ({ loading, error, data }) => {
